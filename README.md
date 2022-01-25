@@ -1,1 +1,1 @@
-# EA-Work-day-scheduler
+# Work Day Schedular
