@@ -13,8 +13,8 @@ var nowDay = moment().format("ddd MMMM Do YY");
     dateEl.textContent= nowDay
 
 // Setup time for daily schedule
-//var currentTime = moment().format("h");
-var currentTime = 12
+var currentTime = moment().format("h");
+
 
 // function to display the correct time in each slot
 function outputHours() {
@@ -43,7 +43,7 @@ function outputHours() {
         }
     }
 }
-// call outputHOurs function
+// call outputHours function
 outputHours()
 
 // Function to save each event to local storage
@@ -78,6 +78,34 @@ function saveEvent () {
         localStorage.setItem("4 PM", eventEl[8].value);
     }
 }
+
+// create function to reload save entries from local storage
+
+function reloadLastsave()  {
+    // using getItem to retrieve from local storage
+    lastSaved = localStorage.getItem("8 AM");
+    eventEl[0].value = lastSaved
+    lastSaved = localStorage.getItem("9 AM");
+    eventEl[1].value = lastSaved
+    lastSaved = localStorage.getItem("10 AM");
+    eventEl[2].value = lastSaved
+    lastSaved = localStorage.getItem("11 AM");
+    eventEl[3].value = lastSaved
+    lastSaved = localStorage.getItem("12 PM");
+    eventEl[4].value = lastSaved
+    lastSaved = localStorage.getItem("1 PM");
+    eventEl[5].value = lastSaved
+    lastSaved = localStorage.getItem("2 PM");
+    eventEl[6].value = lastSaved
+    lastSaved = localStorage.getItem("3 PM");
+    eventEl[7].value = lastSaved
+    lastSaved = localStorage.getItem("4 PM");
+    eventEl[8].value = lastSaved
+}
+
+// call function to retrieve event on planner after refresh
+reloadLastsave();
+
 // create var for save btn
 var btnEl = document.querySelectorAll(".saveBtn");
 // add eventlistenr to save the events into local storage
