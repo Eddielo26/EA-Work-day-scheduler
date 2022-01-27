@@ -13,7 +13,8 @@ var nowDay = moment().format("ddd MMMM Do YY");
     dateEl.textContent= nowDay
 
 // Setup time for daily schedule
-var currentTime = moment().format("h");
+//var currentTime = moment().format("h");
+var currentTime = 12
 
 // function to display the correct time in each slot
 function outputHours() {
@@ -35,7 +36,7 @@ function outputHours() {
 
             if (parseInt(workHours[i])>parseInt(currentTime)) {
                 eventEl[i].setAttribute("class", "future")
-            } else if (workHours[i] === currentTime) {
+            } else if (parseInt(workHours[i]) === currentTime) {
                 eventEl[i].setAttribute("class", "present")
             } else 
                 eventEl[i].setAttribute("class", "past")
@@ -47,5 +48,39 @@ outputHours()
 
 // Function to save each event to local storage
 
-
-
+function saveEvent () {
+    // if the text box is not empty, than we store the content in local storage
+    if (eventEl[0].value!=="") {
+        localStorage.setItem("8 AM", eventEl[0].value);
+    }
+    if (eventEl[1].value!=="") {
+        localStorage.setItem("9 AM", eventEl[1].value);
+    }
+    if (eventEl[2].value!=="") {
+        localStorage.setItem("10 AM", eventEl[2].value);
+    }
+    if (eventEl[3].value!=="") {
+        localStorage.setItem("11 AM", eventEl[3].value);
+    }
+    if (eventEl[4].value!=="") {
+        localStorage.setItem("12 AM", eventEl[4].value);
+    }
+    if (eventEl[5].value!=="") {
+        localStorage.setItem("1 PM", eventEl[5].value);
+    }
+    if (eventEl[6].value!=="") {
+        localStorage.setItem("2 PM", eventEl[6].value);
+    }
+    if (eventEl[7].value!=="") {
+        localStorage.setItem("3 PM", eventEl[7].value);
+    }
+    if (eventEl[8].value!=="") {
+        localStorage.setItem("4 PM", eventEl[8].value);
+    }
+}
+// create var for save btn
+var btnEl = document.querySelectorAll(".saveBtn");
+// add eventlistenr to save the events into local storage
+btnEl.forEach(function(event) {
+    event.addEventListener("click", saveEvent)
+});
