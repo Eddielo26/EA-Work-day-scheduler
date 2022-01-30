@@ -15,4 +15,5 @@
     * Saves the users events
     * Retrieves and displays users events upon refresh
 
-![Screen Shot 2022-01-28 at 12 58 11 AM](https://user-images.githubusercontent.com/94813193/151517331-b6f85f1d-f277-4a3b-b504-5670be272248.png)
+
+![Screen Shot 2022-01-30 at 12 15 33 AM](https://user-images.githubusercontent.com/94813193/151692081-5759a55b-a267-4c23-8e2a-cb6d74b8aa69.png)
