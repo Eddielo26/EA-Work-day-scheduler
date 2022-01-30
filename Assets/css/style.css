@@ -65,8 +65,9 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
-  margin-left: -110px;
-  
+  margin-left: -105px;
+  margin-top: -1px;
+  font-size: 23px;
 }
 
 .saveBtn i:hover {
@@ -74,10 +75,6 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
-img {
-  height: 34px;
-  width:28px;
-}
 
 img:hover {
   background-color: rgb(126, 61, 61);
